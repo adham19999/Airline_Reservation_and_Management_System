@@ -1,0 +1,32 @@
+[
+  {
+    "userId": "U1",
+    "username": "adminUser",
+    "passwordHash": "admin123",
+    "fullName": "System Admin",
+    "role": "Administrator",
+    "active": true,
+    "adminLevel": 1
+  },
+  {
+    "userId": "U2",
+    "username": "agentJane",
+    "passwordHash": "hashed_agent123",
+    "fullName": "Jane Agent",
+    "role": "BookingAgent",
+    "active": true,
+    "agentId": "AG001",
+    "officeLocation": "Cairo Office"
+  },
+  {
+    "userId": "U3",
+    "username": "passengerMike",
+    "passwordHash": "hashed_pass123",
+    "fullName": "Mike Smith",
+    "role": "Passenger",
+    "active": true,
+    "passportNumber": "P123456",
+    "contactInfo": "mike@email.com",
+    "loyaltyAccountId": "L001"
+  }
+]

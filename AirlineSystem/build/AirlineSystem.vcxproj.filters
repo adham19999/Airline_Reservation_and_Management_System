@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\domain\user\User.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\domain\user\Administrator.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\domain\user\BookingAgent.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\domain\user\Passenger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\domain\flight\Aircraft.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\domain\flight\Seat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\domain\flight\CrewMember.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\domain\flight\Pilot.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\domain\flight\FlightAttendant.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\domain\flight\Flight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\domain\booking\Payment.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\domain\booking\Reservation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\domain\maintenance\MaintenanceRecord.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\services\auth\AuthService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\services\flight\FlightService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\services\flight\AircraftService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\services\flight\CrewService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\services\booking\BookingService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\services\booking\SeatService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\services\booking\PaymentService.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\UserRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\ApplicationUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\LoginUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\admin\AdminMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\admin\ManageFlightsUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\admin\ManageAircraftUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\admin\ManageCrewUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\agent\AgentMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\passenger\PassengerMenu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\passenger\SearchFlightsUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\FlightRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\AircraftRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\CrewRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{5833A683-CD0D-3A09-AC71-5207FC076387}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

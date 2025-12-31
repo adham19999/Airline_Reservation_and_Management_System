@@ -1,0 +1,10 @@
+^D:\PROGRAMING LANG\C++ CODES\ASSIGNMENTS AND EXERSICE\FINAL\ARS\AIRLINESYSTEM\BUILD\CMAKEFILES\DE7667AF36BBEB014DFBF65E1F028ED9\GENERATE.STAMP.RULE
+setlocal
+D:\cmake\CmakeSetup\bin\cmake.exe "-SD:/programing lang/c++ codes/Assignments and Exersice/Final/ARS/AirlineSystem" "-BD:/programing lang/c++ codes/Assignments and Exersice/Final/ARS/AirlineSystem/build" --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file "D:/programing lang/c++ codes/Assignments and Exersice/Final/ARS/AirlineSystem/build/AirlineSystem.sln"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

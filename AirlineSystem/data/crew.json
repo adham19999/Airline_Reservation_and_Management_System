@@ -1,0 +1,50 @@
+[
+  {
+    "crewId": "P1",
+    "name": "Captain John Smith",
+    "crewType": "Pilot",
+    "licenseNumber": "ATP-12345",
+    "flightHours": 5000
+  },
+  {
+    "crewId": "P2",
+    "name": "Captain Maria Garcia",
+    "crewType": "Pilot",
+    "licenseNumber": "ATP-67890",
+    "flightHours": 4500
+  },
+  {
+    "crewId": "FA1",
+    "name": "Sarah Johnson",
+    "crewType": "FlightAttendant",
+    "certificationLevel": "Senior"
+  },
+  {
+    "crewId": "FA2",
+    "name": "Michael Chen",
+    "crewType": "FlightAttendant",
+    "certificationLevel": "Lead"
+  },
+  {
+    "crewId": "P1",
+    "name": "adham",
+    "crewType": "Pilot",
+    "licenseNumber": "abababahy",
+    "flightHours": 200
+  },
+  {
+    "crewId": "P1",
+    "name": "mya",
+    "crewType": "Pilot",
+    "licenseNumber": "wwww",
+    "flightHours": 0
+  },
+  {
+    "crewId": "P1",
+    "name": "adhamam",
+    "crewType": "Pilot",
+    "licenseNumber": "avvauh",
+    "flightHours": 10
+  }
+ 
+]

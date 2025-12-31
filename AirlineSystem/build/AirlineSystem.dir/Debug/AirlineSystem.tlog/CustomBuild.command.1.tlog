@@ -1,0 +1,10 @@
+^D:\PROGRAMING LANG\C++ CODES\ASSIGNMENTS AND EXERSICE\FINAL\ARS\AIRLINESYSTEM\CMAKELISTS.TXT
+setlocal
+D:\cmake\CmakeSetup\bin\cmake.exe "-SD:/programing lang/c++ codes/Assignments and Exersice/Final/ARS/AirlineSystem" "-BD:/programing lang/c++ codes/Assignments and Exersice/Final/ARS/AirlineSystem/build" --check-stamp-file "D:/programing lang/c++ codes/Assignments and Exersice/Final/ARS/AirlineSystem/build/CMakeFiles/generate.stamp"
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

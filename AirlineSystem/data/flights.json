@@ -1,0 +1,42 @@
+[
+  {
+    "flightId": "F1",
+    "flightNumber": "AR101",
+    "departureCity": "Cairo",
+    "arrivalCity": "Dubai",
+    "departureTime": "2025-01-05 09:30",
+    "arrivalTime": "2025-01-05 13:15",
+    "status": "Scheduled",
+    "aircraftId": "AC1"
+  },
+  {
+    "flightId": "F2",
+    "flightNumber": "AR202",
+    "departureCity": "Dubai",
+    "arrivalCity": "London",
+    "departureTime": "2025-01-06 08:00",
+    "arrivalTime": "2025-01-06 12:40",
+    "status": "Delayed",
+    "aircraftId": "AC2"
+  },
+  {
+    "flightId": "F3",
+    "flightNumber": "AR303",
+    "departureCity": "London",
+    "arrivalCity": "New York",
+    "departureTime": "2025-01-07 10:15",
+    "arrivalTime": "2025-01-07 18:55",
+    "status": "Cancelled",
+    "aircraftId": "AC1"
+  },
+  {
+    "flightId": "F4",
+    "flightNumber": "1",
+    "departureCity": "1",
+    "arrivalCity": "1",
+    "departureTime": "1111111",
+    "arrivalTime": "111111",
+    "status": "Delayed",
+    "aircraftId": "AC1"
+  }
+]

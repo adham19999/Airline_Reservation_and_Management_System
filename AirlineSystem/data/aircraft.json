@@ -1,0 +1,20 @@
+[
+  {
+    "aircraftId": "AC1",
+    "registration": "N12345",
+    "model": "Boeing 737",
+    "manufacturer": "Boeing",
+    "economySeats": 150,
+    "businessSeats": 30,
+    "totalSeats": 180
+  },
+  {
+    "aircraftId": "AC2",
+    "registration": "N67890",
+    "model": "Airbus A320",
+    "manufacturer": "Airbus",
+    "economySeats": 160,
+    "businessSeats": 40,
+    "totalSeats": 200
+  }
+]
