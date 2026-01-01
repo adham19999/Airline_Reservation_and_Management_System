@@ -15,6 +15,7 @@
     "fullName": "Jane Agent",
     "active": true,
     "role": "BookingAgent",
+    "agentId": "",
     "officeLocation": "Cairo Office"
   },
   {
@@ -34,5 +35,23 @@
     "active": true,
     "role": "Passenger",
     "passportNumber": "0100102312"
+  },
+  {
+    "userId": "U5",
+    "username": "adham",
+    "passwordHash": "adham",
+    "fullName": "adham",
+    "active": true,
+    "role": "Administrator",
+    "adminLevel": 5
+  },
+  {
+    "userId": "U6",
+    "username": "eyad22",
+    "passwordHash": "eyad22",
+    "fullName": "eyad22",
+    "active": true,
+    "role": "Administrator",
+    "adminLevel": 5
   }
 ]

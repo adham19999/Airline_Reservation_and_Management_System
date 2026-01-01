@@ -222,6 +222,7 @@ void UserRepository::saveToJson() const {
             file << "    \"role\": \"BookingAgent\",\n";
             auto agent = dynamic_pointer_cast<BookingAgent>(user);
             if (agent) {
+                file << "    \"agentId\": \"" << agent->getAgentId() << "\",\n";
                 file << "    \"officeLocation\": \"" << agent->getOfficeLocation() << "\"\n";
             }
         } else if (user->getRole() == UserRole::Passenger) {
@@ -229,7 +230,8 @@ void UserRepository::saveToJson() const {
             auto passenger = dynamic_pointer_cast<Passenger>(user);
             if (passenger) {
                 file << "    \"passportNumber\": \"" << passenger->getPassportNumber() << "\",\n";
-                // file << "    \"loyaltyPoints\": " << passenger->getLoyaltyPoints() << "\n";
+                // file << "    \"email\": \"" << passenger->getEmail() << "\",\n";
+                // file << "    \"loyaltyId\": \"" << passenger->getLoyaltyId() << "\"\n";
             }
         }
         
@@ -241,7 +243,7 @@ void UserRepository::saveToJson() const {
     file << "]\n";
     file.close();
 }
-
+// ...existing code...
 void UserRepository::addUser(shared_ptr<User> user) {
     users.push_back(user);
     saveToJson();  // PERSIST CHANGES
