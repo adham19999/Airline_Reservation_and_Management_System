@@ -1,6 +1,7 @@
 #include "MaintenanceRecord.h"
 #include <ctime>
 #include <sstream>
+#include <iomanip>
 
 using namespace std;
 
@@ -42,10 +43,15 @@ string MaintenanceRecord::getCompletionDate() const {
 void MaintenanceRecord::markAsCompleted() {
     completed = true;
     time_t now = time(nullptr);
-    struct tm timeinfo = *localtime(&now);
+    struct tm timeinfo;
+    
+    // Use localtime_s (Windows-safe version)
+    localtime_s(&timeinfo, &now);
+    
     stringstream ss;
     ss << (timeinfo.tm_year + 1900) << "-"
-       << (timeinfo.tm_mon + 1) << "-"
-       << timeinfo.tm_mday;
+       << setw(2) << setfill('0') << (timeinfo.tm_mon + 1) << "-"
+       << setw(2) << setfill('0') << timeinfo.tm_mday;
     completionDate = ss.str();
 }
+

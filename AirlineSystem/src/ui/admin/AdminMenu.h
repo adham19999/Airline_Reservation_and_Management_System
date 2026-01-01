@@ -7,6 +7,7 @@
 class FlightService;
 class AircraftService;
 class CrewService;
+class UserRepository;
 
 class AdminMenu : public Menu {
 private:
@@ -14,6 +15,7 @@ private:
     FlightService& flightService;
     AircraftService& aircraftService;
     CrewService& crewService;
+    UserRepository& userRepository;
 
     void manageFlights();
     void manageAircraft();
@@ -25,7 +27,8 @@ public:
     AdminMenu(std::shared_ptr<User> user,
               FlightService& fs,
               AircraftService& as,
-              CrewService& cs);
+              CrewService& cs,
+              UserRepository& ur);
 
     void display() override;
     bool handleInput(int choice) override;

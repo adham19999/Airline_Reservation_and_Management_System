@@ -85,6 +85,9 @@
     <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\admin\ManageCrewUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\admin\ManageUserUI.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\agent\AgentMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

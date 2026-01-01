@@ -49,12 +49,12 @@ set(SOURCES
     src/ui/ApplicationUI.cpp
     src/ui/LoginUI.cpp
     
-    # UI - Admin
+  # UI - Admin
     src/ui/admin/AdminMenu.cpp
     src/ui/admin/ManageFlightsUI.cpp
     src/ui/admin/ManageAircraftUI.cpp
     src/ui/admin/ManageCrewUI.cpp
-
+    src/ui/admin/ManageUserUI.cpp
     
     # UI - Agent
     src/ui/agent/AgentMenu.cpp
@@ -73,6 +73,7 @@ set(SOURCES
 
 # Include directories
 include_directories(${CMAKE_SOURCE_DIR}/src)
+
 
 # Create executable
 add_executable(AirlineSystem ${SOURCES})

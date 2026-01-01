@@ -40,16 +40,11 @@ unique_ptr<Menu> ApplicationUI::createMenuForRole(shared_ptr<User> user) {
     UserRole role = user->getRole();
 
     if (role == UserRole::Administrator) {
-        return make_unique<AdminMenu>(user, flightService, aircraftService, crewService);
+        return make_unique<AdminMenu>(user, flightService, aircraftService, crewService, userRepository);  // Added userRepository
     } else if (role == UserRole::BookingAgent) {
         return make_unique<AgentMenu>(user);
     } else if (role == UserRole::Passenger) {
-       return make_unique<PassengerMenu>(
-    user,
-    flightService,
-    aircraftService
-);
-
+        return make_unique<PassengerMenu>(user, flightService, aircraftService);
     }
 
     return nullptr;

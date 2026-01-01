@@ -3,14 +3,16 @@
 #include "ManageFlightsUI.h"
 #include "ManageAircraftUI.h"
 #include "ManageCrewUI.h"
+#include "ManageUserUI.h"
 
 using namespace std;
 
 AdminMenu::AdminMenu(shared_ptr<User> user,
                      FlightService& fs,
                      AircraftService& as,
-                     CrewService& cs)
-    : Menu(user), flightService(fs), aircraftService(as), crewService(cs) {}
+                     CrewService& cs,
+                     UserRepository& ur)
+    : Menu(user), flightService(fs), aircraftService(as), crewService(cs), userRepository(ur) {}
 
 void AdminMenu::display() {
     cout << "\n========================================\n";
@@ -54,7 +56,8 @@ void AdminMenu::manageCrew() {
 }
 
 void AdminMenu::manageUsers() {
-    cout << "\n[TODO] Manage Users - Coming in Phase 3\n";
+    ManageUsersUI ui(userRepository);
+    ui.display();
 }
 
 void AdminMenu::generateReports() {

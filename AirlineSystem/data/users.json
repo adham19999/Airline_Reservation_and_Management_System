@@ -4,8 +4,8 @@
     "username": "adminUser",
     "passwordHash": "admin123",
     "fullName": "System Admin",
-    "role": "Administrator",
     "active": true,
+    "role": "Administrator",
     "adminLevel": 1
   },
   {
@@ -13,9 +13,8 @@
     "username": "agentJane",
     "passwordHash": "hashed_agent123",
     "fullName": "Jane Agent",
-    "role": "BookingAgent",
     "active": true,
-    "agentId": "AG001",
+    "role": "BookingAgent",
     "officeLocation": "Cairo Office"
   },
   {
@@ -23,10 +22,17 @@
     "username": "passengerMike",
     "passwordHash": "hashed_pass123",
     "fullName": "Mike Smith",
-    "role": "Passenger",
     "active": true,
-    "passportNumber": "P123456",
-    "contactInfo": "mike@email.com",
-    "loyaltyAccountId": "L001"
+    "role": "Passenger",
+    "passportNumber": "P123456"
+  },
+  {
+    "userId": "U4",
+    "username": "eyad",
+    "passwordHash": "eyad",
+    "fullName": "eyad",
+    "active": true,
+    "role": "Passenger",
+    "passportNumber": "0100102312"
   }
 ]
