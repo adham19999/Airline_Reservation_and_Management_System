@@ -77,57 +77,48 @@ void ManageFlightsUI::displayFlights() const {
 }
 
 void ManageFlightsUI::addFlight() {
-    cout << "\n--- Add New Flight ---\n";
+    cout << "\n--- Add Flight ---\n";
     
-    // Display available aircraft
-    auto allAircraft = aircraftService.getAllAircraft();
-    if (allAircraft.empty()) {
-        cout << "Error: No aircraft available. Add aircraft first.\n";
-        return;
-    }
+    string flightId, flightNumber, departureCity, arrivalCity;
+    string departureTime, arrivalTime, aircraftId;
     
-    cout << "\nAvailable Aircraft:\n";
-    for (size_t i = 0; i < allAircraft.size(); ++i) {
-        cout << i + 1 << ". " << allAircraft[i]->getModel() 
-             << " (" << allAircraft[i]->getAircraftId() << ")\n";
-    }
+    cout << "Flight ID: ";
+    getline(cin, flightId);
     
-    string flightNumber, departure, arrival, depTime, arrTime;
-    int aircraftChoice;
-    
-    cout << "\nFlight Number: ";
+    cout << "Flight Number: ";
     getline(cin, flightNumber);
     
     cout << "Departure City: ";
-    getline(cin, departure);
+    getline(cin, departureCity);
     
     cout << "Arrival City: ";
-    getline(cin, arrival);
+    getline(cin, arrivalCity);
     
     cout << "Departure Time (YYYY-MM-DD HH:MM): ";
-    getline(cin, depTime);
+    getline(cin, departureTime);
     
     cout << "Arrival Time (YYYY-MM-DD HH:MM): ";
-    getline(cin, arrTime);
+    getline(cin, arrivalTime);
     
-    cout << "Select Aircraft (1-" << allAircraft.size() << "): ";
-    cin >> aircraftChoice;
-    cin.ignore();
-    
-    if (aircraftChoice < 1 || aircraftChoice > (int)allAircraft.size()) {
-        cout << "Invalid aircraft selection.\n";
-        return;
-    }
-    
-    string aircraftId = allAircraft[aircraftChoice - 1]->getAircraftId();
-    
-    auto flight = flightService.createFlight(flightNumber, departure, arrival, 
-                                            depTime, arrTime, aircraftId);
-    
-    if (flight) {
-        cout << "Flight added successfully!\n";
-    } else {
-        cout << "Failed to add flight.\n";
+    cout << "Aircraft ID: ";
+    getline(cin, aircraftId);
+
+    try {
+        // ✅ FIXED: No totalSeats parameter anymore
+        flightService.addFlight(
+            flightId,
+            flightNumber,
+            departureCity,
+            arrivalCity,
+            departureTime,
+            arrivalTime,
+            aircraftId,
+            FlightStatus::Scheduled  // Default status
+        );
+        
+        cout << "\n✓ Flight added successfully!\n";
+    } catch (const exception& e) {
+        cout << "\nError: " << e.what() << "\n";
     }
 }
 

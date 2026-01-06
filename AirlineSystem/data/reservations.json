@@ -1,1 +1,12 @@
-[]
+[
+  {
+    "reservationId": "R2",
+    "passengerId": "U4",
+    "flightId": "2",
+    "seatId": "SEAT_2_33F",
+    "bookingDate": "2026-01-01 06:08",
+    "paymentId": "PAYR1",
+    "price": 250,
+    "status": "Confirmed"
+  }
+]

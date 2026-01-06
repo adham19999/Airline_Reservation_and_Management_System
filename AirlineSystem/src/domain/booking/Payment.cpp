@@ -1,29 +1,36 @@
 #include "Payment.h"
 
-Payment::Payment(const string& paymentId,
-                 PaymentMethod method,
-                 double amount)
-    : paymentId(paymentId),
-      method(method),
-      amount(amount),
-      status(PaymentStatus::Pending) {}
+Payment::Payment(const string& paymentId, double amount, shared_ptr<PaymentStrategy> strategy)
+    : paymentId(paymentId), amount(amount), status(PaymentStatus::Pending), strategy(strategy) {}
 
-string Payment::getPaymentId() const {
-    return paymentId;
+string Payment::getPaymentId() const { return paymentId; }
+double Payment::getAmount() const { return amount; }
+PaymentStatus Payment::getStatus() const { return status; }
+
+string Payment::getPaymentMethodName() const {
+    if (strategy) {
+        return strategy->getPaymentMethodName();
+    }
+    return "Unknown";
 }
 
-PaymentMethod Payment::getMethod() const {
-    return method;
+bool Payment::process() {
+    if (strategy && strategy->processPayment(amount)) {
+        status = PaymentStatus::Completed;
+        return true;
+    }
+    status = PaymentStatus::Failed;
+    return false;
 }
 
-double Payment::getAmount() const {
-    return amount;
+bool Payment::refund() {
+    if (status == PaymentStatus::Completed && strategy && strategy->refund(amount)) {
+        status = PaymentStatus::Refunded;
+        return true;
+    }
+    return false;
 }
 
-PaymentStatus Payment::getStatus() const {
-    return status;
-}
-
-void Payment::setStatus(PaymentStatus status) {
-    this->status = status;
+void Payment::setStatus(PaymentStatus newStatus) {
+    status = newStatus;
 }

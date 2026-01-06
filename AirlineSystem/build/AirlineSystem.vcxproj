@@ -394,6 +394,10 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\services\booking\SeatService.cpp" />
     <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\services\booking\PaymentService.cpp" />
     <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\UserRepository.cpp" />
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\FlightRepository.cpp" />
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\AircraftRepository.cpp" />
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\CrewRepository.cpp" />
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\ReservationRepository.cpp" />
     <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\ApplicationUI.cpp" />
     <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\LoginUI.cpp" />
     <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\admin\AdminMenu.cpp" />
@@ -404,9 +408,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\agent\AgentMenu.cpp" />
     <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\passenger\PassengerMenu.cpp" />
     <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\passenger\SearchFlightsUI.cpp" />
-    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\FlightRepository.cpp" />
-    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\AircraftRepository.cpp" />
-    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\CrewRepository.cpp" />
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\passenger\BookFlightUI.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

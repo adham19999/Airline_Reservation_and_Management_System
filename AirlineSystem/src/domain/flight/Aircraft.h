@@ -2,8 +2,6 @@
 #define AIRCRAFT_H
 
 #include <string>
-#include <vector>
-#include "Seat.h"
 using namespace std;
 
 class Aircraft {
@@ -15,7 +13,6 @@ private:
     int economySeats;
     int businessSeats;
     int totalSeats;
-    vector<Seat> seats;
 
 public:
     Aircraft(const string& aircraftId,
@@ -33,8 +30,8 @@ public:
     int getEconomySeats() const;
     int getBusinessSeats() const;
     int getTotalSeats() const;
-
-    const vector<Seat>& getSeats() const;
+    int getBusinessClassCapacity() const;
+    int getEconomyClassCapacity() const;
 };
 
 #endif

@@ -1,42 +1,2186 @@
 [
   {
-    "flightId": "F1",
-    "flightNumber": "AR101",
-    "departureCity": "Cairo",
-    "arrivalCity": "Dubai",
-    "departureTime": "2025-01-05 09:30",
-    "arrivalTime": "2025-01-05 13:15",
-    "status": "Scheduled",
-    "aircraftId": "AC1"
-  },
-  {
-    "flightId": "F2",
-    "flightNumber": "AR202",
-    "departureCity": "Dubai",
-    "arrivalCity": "London",
-    "departureTime": "2025-01-06 08:00",
-    "arrivalTime": "2025-01-06 12:40",
-    "status": "Delayed",
-    "aircraftId": "AC2"
-  },
-  {
-    "flightId": "F3",
-    "flightNumber": "AR303",
-    "departureCity": "London",
-    "arrivalCity": "New York",
-    "departureTime": "2025-01-07 10:15",
-    "arrivalTime": "2025-01-07 18:55",
-    "status": "Cancelled",
-    "aircraftId": "AC1"
-  },
-  {
-    "flightId": "F4",
+    "flightId": "1",
     "flightNumber": "1",
     "departureCity": "1",
     "arrivalCity": "1",
-    "departureTime": "1111111",
-    "arrivalTime": "111111",
-    "status": "Delayed",
-    "aircraftId": "AC1"
+    "departureTime": "1",
+    "arrivalTime": "1",
+    "aircraftId": "AC1",
+    "status": "Scheduled",
+    "seats": [
+      {
+        "seatId": "SEAT_1_1A",
+        "seatNumber": "1A",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_1B",
+        "seatNumber": "1B",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_1C",
+        "seatNumber": "1C",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_1D",
+        "seatNumber": "1D",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_1E",
+        "seatNumber": "1E",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_1F",
+        "seatNumber": "1F",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_2A",
+        "seatNumber": "2A",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_2B",
+        "seatNumber": "2B",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_2C",
+        "seatNumber": "2C",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_2D",
+        "seatNumber": "2D",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_2E",
+        "seatNumber": "2E",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_2F",
+        "seatNumber": "2F",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_3A",
+        "seatNumber": "3A",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_3B",
+        "seatNumber": "3B",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_3C",
+        "seatNumber": "3C",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_3D",
+        "seatNumber": "3D",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_3E",
+        "seatNumber": "3E",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_3F",
+        "seatNumber": "3F",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_4A",
+        "seatNumber": "4A",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_4B",
+        "seatNumber": "4B",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_4C",
+        "seatNumber": "4C",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_4D",
+        "seatNumber": "4D",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_4E",
+        "seatNumber": "4E",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_4F",
+        "seatNumber": "4F",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_5A",
+        "seatNumber": "5A",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_5B",
+        "seatNumber": "5B",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_5C",
+        "seatNumber": "5C",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_5D",
+        "seatNumber": "5D",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_5E",
+        "seatNumber": "5E",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_5F",
+        "seatNumber": "5F",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_10A",
+        "seatNumber": "10A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_10B",
+        "seatNumber": "10B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_10C",
+        "seatNumber": "10C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_10D",
+        "seatNumber": "10D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_10E",
+        "seatNumber": "10E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_10F",
+        "seatNumber": "10F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_11A",
+        "seatNumber": "11A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_11B",
+        "seatNumber": "11B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_11C",
+        "seatNumber": "11C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_11D",
+        "seatNumber": "11D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_11E",
+        "seatNumber": "11E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_11F",
+        "seatNumber": "11F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_12A",
+        "seatNumber": "12A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_12B",
+        "seatNumber": "12B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_12C",
+        "seatNumber": "12C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_12D",
+        "seatNumber": "12D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_12E",
+        "seatNumber": "12E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_12F",
+        "seatNumber": "12F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_13A",
+        "seatNumber": "13A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_13B",
+        "seatNumber": "13B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_13C",
+        "seatNumber": "13C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_13D",
+        "seatNumber": "13D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_13E",
+        "seatNumber": "13E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_13F",
+        "seatNumber": "13F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_14A",
+        "seatNumber": "14A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_14B",
+        "seatNumber": "14B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_14C",
+        "seatNumber": "14C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_14D",
+        "seatNumber": "14D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_14E",
+        "seatNumber": "14E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_14F",
+        "seatNumber": "14F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_15A",
+        "seatNumber": "15A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_15B",
+        "seatNumber": "15B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_15C",
+        "seatNumber": "15C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_15D",
+        "seatNumber": "15D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_15E",
+        "seatNumber": "15E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_15F",
+        "seatNumber": "15F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_16A",
+        "seatNumber": "16A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_16B",
+        "seatNumber": "16B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_16C",
+        "seatNumber": "16C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_16D",
+        "seatNumber": "16D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_16E",
+        "seatNumber": "16E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_16F",
+        "seatNumber": "16F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_17A",
+        "seatNumber": "17A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_17B",
+        "seatNumber": "17B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_17C",
+        "seatNumber": "17C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_17D",
+        "seatNumber": "17D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_17E",
+        "seatNumber": "17E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_17F",
+        "seatNumber": "17F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_18A",
+        "seatNumber": "18A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_18B",
+        "seatNumber": "18B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_18C",
+        "seatNumber": "18C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_18D",
+        "seatNumber": "18D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_18E",
+        "seatNumber": "18E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_18F",
+        "seatNumber": "18F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_19A",
+        "seatNumber": "19A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_19B",
+        "seatNumber": "19B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_19C",
+        "seatNumber": "19C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_19D",
+        "seatNumber": "19D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_19E",
+        "seatNumber": "19E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_19F",
+        "seatNumber": "19F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_20A",
+        "seatNumber": "20A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_20B",
+        "seatNumber": "20B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_20C",
+        "seatNumber": "20C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_20D",
+        "seatNumber": "20D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_20E",
+        "seatNumber": "20E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_20F",
+        "seatNumber": "20F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_21A",
+        "seatNumber": "21A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_21B",
+        "seatNumber": "21B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_21C",
+        "seatNumber": "21C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_21D",
+        "seatNumber": "21D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_21E",
+        "seatNumber": "21E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_21F",
+        "seatNumber": "21F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_22A",
+        "seatNumber": "22A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_22B",
+        "seatNumber": "22B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_22C",
+        "seatNumber": "22C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_22D",
+        "seatNumber": "22D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_22E",
+        "seatNumber": "22E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_22F",
+        "seatNumber": "22F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_23A",
+        "seatNumber": "23A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_23B",
+        "seatNumber": "23B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_23C",
+        "seatNumber": "23C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_23D",
+        "seatNumber": "23D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_23E",
+        "seatNumber": "23E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_23F",
+        "seatNumber": "23F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_24A",
+        "seatNumber": "24A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_24B",
+        "seatNumber": "24B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_24C",
+        "seatNumber": "24C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_24D",
+        "seatNumber": "24D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_24E",
+        "seatNumber": "24E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_24F",
+        "seatNumber": "24F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_25A",
+        "seatNumber": "25A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_25B",
+        "seatNumber": "25B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_25C",
+        "seatNumber": "25C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_25D",
+        "seatNumber": "25D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_25E",
+        "seatNumber": "25E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_25F",
+        "seatNumber": "25F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_26A",
+        "seatNumber": "26A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_26B",
+        "seatNumber": "26B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_26C",
+        "seatNumber": "26C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_26D",
+        "seatNumber": "26D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_26E",
+        "seatNumber": "26E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_26F",
+        "seatNumber": "26F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_27A",
+        "seatNumber": "27A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_27B",
+        "seatNumber": "27B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_27C",
+        "seatNumber": "27C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_27D",
+        "seatNumber": "27D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_27E",
+        "seatNumber": "27E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_27F",
+        "seatNumber": "27F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_28A",
+        "seatNumber": "28A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_28B",
+        "seatNumber": "28B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_28C",
+        "seatNumber": "28C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_28D",
+        "seatNumber": "28D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_28E",
+        "seatNumber": "28E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_28F",
+        "seatNumber": "28F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_29A",
+        "seatNumber": "29A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_29B",
+        "seatNumber": "29B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_29C",
+        "seatNumber": "29C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_29D",
+        "seatNumber": "29D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_29E",
+        "seatNumber": "29E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_29F",
+        "seatNumber": "29F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_30A",
+        "seatNumber": "30A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_30B",
+        "seatNumber": "30B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_30C",
+        "seatNumber": "30C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_30D",
+        "seatNumber": "30D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_30E",
+        "seatNumber": "30E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_30F",
+        "seatNumber": "30F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_31A",
+        "seatNumber": "31A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_31B",
+        "seatNumber": "31B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_31C",
+        "seatNumber": "31C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_31D",
+        "seatNumber": "31D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_31E",
+        "seatNumber": "31E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_31F",
+        "seatNumber": "31F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_32A",
+        "seatNumber": "32A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_32B",
+        "seatNumber": "32B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_32C",
+        "seatNumber": "32C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_32D",
+        "seatNumber": "32D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_32E",
+        "seatNumber": "32E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_32F",
+        "seatNumber": "32F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_33A",
+        "seatNumber": "33A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_33B",
+        "seatNumber": "33B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_33C",
+        "seatNumber": "33C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_33D",
+        "seatNumber": "33D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_33E",
+        "seatNumber": "33E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_33F",
+        "seatNumber": "33F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_34A",
+        "seatNumber": "34A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_34B",
+        "seatNumber": "34B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_34C",
+        "seatNumber": "34C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_34D",
+        "seatNumber": "34D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_34E",
+        "seatNumber": "34E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_1_34F",
+        "seatNumber": "34F",
+        "seatClass": "Economy",
+        "status": "Available"
+      }
+    ]
+  },
+  {
+    "flightId": "2",
+    "flightNumber": "2",
+    "departureCity": "2",
+    "arrivalCity": "2",
+    "departureTime": "2",
+    "arrivalTime": "2",
+    "aircraftId": "AC1",
+    "status": "Scheduled",
+    "seats": [
+      {
+        "seatId": "SEAT_2_1A",
+        "seatNumber": "1A",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_1B",
+        "seatNumber": "1B",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_1C",
+        "seatNumber": "1C",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_1D",
+        "seatNumber": "1D",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_1E",
+        "seatNumber": "1E",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_1F",
+        "seatNumber": "1F",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_2A",
+        "seatNumber": "2A",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_2B",
+        "seatNumber": "2B",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_2C",
+        "seatNumber": "2C",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_2D",
+        "seatNumber": "2D",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_2E",
+        "seatNumber": "2E",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_2F",
+        "seatNumber": "2F",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_3A",
+        "seatNumber": "3A",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_3B",
+        "seatNumber": "3B",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_3C",
+        "seatNumber": "3C",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_3D",
+        "seatNumber": "3D",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_3E",
+        "seatNumber": "3E",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_3F",
+        "seatNumber": "3F",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_4A",
+        "seatNumber": "4A",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_4B",
+        "seatNumber": "4B",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_4C",
+        "seatNumber": "4C",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_4D",
+        "seatNumber": "4D",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_4E",
+        "seatNumber": "4E",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_4F",
+        "seatNumber": "4F",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_5A",
+        "seatNumber": "5A",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_5B",
+        "seatNumber": "5B",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_5C",
+        "seatNumber": "5C",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_5D",
+        "seatNumber": "5D",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_5E",
+        "seatNumber": "5E",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_5F",
+        "seatNumber": "5F",
+        "seatClass": "Business",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_10A",
+        "seatNumber": "10A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_10B",
+        "seatNumber": "10B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_10C",
+        "seatNumber": "10C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_10D",
+        "seatNumber": "10D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_10E",
+        "seatNumber": "10E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_10F",
+        "seatNumber": "10F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_11A",
+        "seatNumber": "11A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_11B",
+        "seatNumber": "11B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_11C",
+        "seatNumber": "11C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_11D",
+        "seatNumber": "11D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_11E",
+        "seatNumber": "11E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_11F",
+        "seatNumber": "11F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_12A",
+        "seatNumber": "12A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_12B",
+        "seatNumber": "12B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_12C",
+        "seatNumber": "12C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_12D",
+        "seatNumber": "12D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_12E",
+        "seatNumber": "12E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_12F",
+        "seatNumber": "12F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_13A",
+        "seatNumber": "13A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_13B",
+        "seatNumber": "13B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_13C",
+        "seatNumber": "13C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_13D",
+        "seatNumber": "13D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_13E",
+        "seatNumber": "13E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_13F",
+        "seatNumber": "13F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_14A",
+        "seatNumber": "14A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_14B",
+        "seatNumber": "14B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_14C",
+        "seatNumber": "14C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_14D",
+        "seatNumber": "14D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_14E",
+        "seatNumber": "14E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_14F",
+        "seatNumber": "14F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_15A",
+        "seatNumber": "15A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_15B",
+        "seatNumber": "15B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_15C",
+        "seatNumber": "15C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_15D",
+        "seatNumber": "15D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_15E",
+        "seatNumber": "15E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_15F",
+        "seatNumber": "15F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_16A",
+        "seatNumber": "16A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_16B",
+        "seatNumber": "16B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_16C",
+        "seatNumber": "16C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_16D",
+        "seatNumber": "16D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_16E",
+        "seatNumber": "16E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_16F",
+        "seatNumber": "16F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_17A",
+        "seatNumber": "17A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_17B",
+        "seatNumber": "17B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_17C",
+        "seatNumber": "17C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_17D",
+        "seatNumber": "17D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_17E",
+        "seatNumber": "17E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_17F",
+        "seatNumber": "17F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_18A",
+        "seatNumber": "18A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_18B",
+        "seatNumber": "18B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_18C",
+        "seatNumber": "18C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_18D",
+        "seatNumber": "18D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_18E",
+        "seatNumber": "18E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_18F",
+        "seatNumber": "18F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_19A",
+        "seatNumber": "19A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_19B",
+        "seatNumber": "19B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_19C",
+        "seatNumber": "19C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_19D",
+        "seatNumber": "19D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_19E",
+        "seatNumber": "19E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_19F",
+        "seatNumber": "19F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_20A",
+        "seatNumber": "20A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_20B",
+        "seatNumber": "20B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_20C",
+        "seatNumber": "20C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_20D",
+        "seatNumber": "20D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_20E",
+        "seatNumber": "20E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_20F",
+        "seatNumber": "20F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_21A",
+        "seatNumber": "21A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_21B",
+        "seatNumber": "21B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_21C",
+        "seatNumber": "21C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_21D",
+        "seatNumber": "21D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_21E",
+        "seatNumber": "21E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_21F",
+        "seatNumber": "21F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_22A",
+        "seatNumber": "22A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_22B",
+        "seatNumber": "22B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_22C",
+        "seatNumber": "22C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_22D",
+        "seatNumber": "22D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_22E",
+        "seatNumber": "22E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_22F",
+        "seatNumber": "22F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_23A",
+        "seatNumber": "23A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_23B",
+        "seatNumber": "23B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_23C",
+        "seatNumber": "23C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_23D",
+        "seatNumber": "23D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_23E",
+        "seatNumber": "23E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_23F",
+        "seatNumber": "23F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_24A",
+        "seatNumber": "24A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_24B",
+        "seatNumber": "24B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_24C",
+        "seatNumber": "24C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_24D",
+        "seatNumber": "24D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_24E",
+        "seatNumber": "24E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_24F",
+        "seatNumber": "24F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_25A",
+        "seatNumber": "25A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_25B",
+        "seatNumber": "25B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_25C",
+        "seatNumber": "25C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_25D",
+        "seatNumber": "25D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_25E",
+        "seatNumber": "25E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_25F",
+        "seatNumber": "25F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_26A",
+        "seatNumber": "26A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_26B",
+        "seatNumber": "26B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_26C",
+        "seatNumber": "26C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_26D",
+        "seatNumber": "26D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_26E",
+        "seatNumber": "26E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_26F",
+        "seatNumber": "26F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_27A",
+        "seatNumber": "27A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_27B",
+        "seatNumber": "27B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_27C",
+        "seatNumber": "27C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_27D",
+        "seatNumber": "27D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_27E",
+        "seatNumber": "27E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_27F",
+        "seatNumber": "27F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_28A",
+        "seatNumber": "28A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_28B",
+        "seatNumber": "28B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_28C",
+        "seatNumber": "28C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_28D",
+        "seatNumber": "28D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_28E",
+        "seatNumber": "28E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_28F",
+        "seatNumber": "28F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_29A",
+        "seatNumber": "29A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_29B",
+        "seatNumber": "29B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_29C",
+        "seatNumber": "29C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_29D",
+        "seatNumber": "29D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_29E",
+        "seatNumber": "29E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_29F",
+        "seatNumber": "29F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_30A",
+        "seatNumber": "30A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_30B",
+        "seatNumber": "30B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_30C",
+        "seatNumber": "30C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_30D",
+        "seatNumber": "30D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_30E",
+        "seatNumber": "30E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_30F",
+        "seatNumber": "30F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_31A",
+        "seatNumber": "31A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_31B",
+        "seatNumber": "31B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_31C",
+        "seatNumber": "31C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_31D",
+        "seatNumber": "31D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_31E",
+        "seatNumber": "31E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_31F",
+        "seatNumber": "31F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_32A",
+        "seatNumber": "32A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_32B",
+        "seatNumber": "32B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_32C",
+        "seatNumber": "32C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_32D",
+        "seatNumber": "32D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_32E",
+        "seatNumber": "32E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_32F",
+        "seatNumber": "32F",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_33A",
+        "seatNumber": "33A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_33B",
+        "seatNumber": "33B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_33C",
+        "seatNumber": "33C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_33D",
+        "seatNumber": "33D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_33E",
+        "seatNumber": "33E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_33F",
+        "seatNumber": "33F",
+        "seatClass": "Economy",
+        "status": "Reserved"
+      },
+      {
+        "seatId": "SEAT_2_34A",
+        "seatNumber": "34A",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_34B",
+        "seatNumber": "34B",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_34C",
+        "seatNumber": "34C",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_34D",
+        "seatNumber": "34D",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_34E",
+        "seatNumber": "34E",
+        "seatClass": "Economy",
+        "status": "Available"
+      },
+      {
+        "seatId": "SEAT_2_34F",
+        "seatNumber": "34F",
+        "seatClass": "Economy",
+        "status": "Available"
+      }
+    ]
   }
 ]

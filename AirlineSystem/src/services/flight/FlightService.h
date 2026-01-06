@@ -7,6 +7,7 @@
 #include "../../repository/FlightRepository.h"
 #include "../../repository/AircraftRepository.h"
 #include "../../domain/flight/Flight.h"
+#include "../../domain/flight/Seat.h"
 
 using namespace std;
 
@@ -15,27 +16,44 @@ private:
     FlightRepository& flightRepo;
     AircraftRepository& aircraftRepo;
 
+    // ✅ Single source of truth for seat generation
+    void generateSeatsForFlight(shared_ptr<Flight> flight, shared_ptr<Aircraft> aircraft);
+
 public:
-    FlightService(FlightRepository& fRepo, AircraftRepository& aRepo);
-    
-    // Flight management
-    shared_ptr<Flight> createFlight(const string& flightNumber, const string& departure,
-                                   const string& arrival, const string& depTime,
-                                   const string& arrTime, const string& aircraftId);
-    
-    shared_ptr<Flight> getFlightByNumber(const string& flightNumber) const;
-    const vector<shared_ptr<Flight>>& getAllFlights() const;
-    
-    void updateFlightStatus(const string& flightId, FlightStatus status);
+    FlightService(FlightRepository& repo, AircraftRepository& aircraftRepo);
+
+    // Business operations
+    void addFlight(const string& flightId,
+                   const string& flightNumber,
+                   const string& departureCity,
+                   const string& arrivalCity,
+                   const string& departureTime,
+                   const string& arrivalTime,
+                   const string& aircraftId,
+                   FlightStatus status);
+
+    void updateFlight(const string& flightId,
+                      const string& flightNumber,
+                      const string& departureCity,
+                      const string& arrivalCity,
+                      const string& departureTime,
+                      const string& arrivalTime,
+                      const string& aircraftId,
+                      FlightStatus status);
+
+    void updateFlightStatus(const string& flightId, FlightStatus newStatus);
     void deleteFlight(const string& flightId);
-    
-    // Seat generation
-    
-    void generateSeatsForFlight(const string& flightId);
- // Search functionality
-    vector<shared_ptr<Flight>> searchFlights(const string& origin, 
-                                             const string& destination, 
-                                             const string& departureDate);
+
+    // ✅ NEW: Ensures business invariant "All flights have seats"
+    void ensureAllFlightsHaveSeats();
+
+    // Query operations
+    shared_ptr<Flight> getFlightById(const string& flightId) const;
+    shared_ptr<Flight> getFlightByNumber(const string& flightNumber) const;
+    vector<shared_ptr<Flight>> searchFlights(const string& origin,
+                                            const string& destination,
+                                            const string& date) const;
+    vector<shared_ptr<Flight>> getAllFlights() const;
 };
 
 #endif

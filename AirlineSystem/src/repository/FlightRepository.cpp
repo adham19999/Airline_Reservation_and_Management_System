@@ -6,24 +6,6 @@
 
 using namespace std;
 
-
-FlightRepository::FlightRepository(const string& dataPath)
-    : dataFilePath(dataPath) {
-    load();
-}
-
-void FlightRepository::load() {
-    flights.clear();
-    
-    ifstream file(dataFilePath);
-    if (file.is_open()) {
-        loadFromJson();
-        file.close();
-    } else {
-        cout << "Warning: " << dataFilePath << " not found. Starting with empty flights.\n";
-    }
-}
-
 inline string extractString(const string& line, const string& key) {
     size_t pos = line.find("\"" + key + "\"");
     if (pos == string::npos) return "";
@@ -41,20 +23,22 @@ inline string extractString(const string& line, const string& key) {
     return line.substr(start, end - start);
 }
 
-inline int extractInt(const string& line, const string& key) {
-    size_t pos = line.find("\"" + key + "\"");
-    if (pos == string::npos) return 0;
+FlightRepository::FlightRepository(const string& dataPath)
+    : dataFilePath(dataPath) {}
+
+void FlightRepository::load(AircraftRepository& aircraftRepo) {
+    flights.clear();
     
-    pos = line.find(":", pos);
-    if (pos == string::npos) return 0;
-    
-    stringstream ss(line.substr(pos + 1));
-    int value;
-    ss >> value;
-    return value;
+    ifstream file(dataFilePath);
+    if (file.is_open()) {
+        loadFromJson(aircraftRepo);
+        file.close();
+    } else {
+        cout << "Warning: " << dataFilePath << " not found. Starting with empty flights.\n";
+    }
 }
 
-void FlightRepository::loadFromJson() {
+void FlightRepository::loadFromJson(AircraftRepository& aircraftRepo) {
     ifstream file(dataFilePath);
     if (!file.is_open()) return;
 
@@ -64,7 +48,6 @@ void FlightRepository::loadFromJson() {
     file.close();
 
     if (content.empty() || content.find_first_not_of(" \n\r\t[]") == string::npos) {
-        cout << "Info: flights.json is empty. No flights loaded.\n";
         return;
     }
 
@@ -74,23 +57,23 @@ void FlightRepository::loadFromJson() {
     int braceCount = 0;
 
     while (getline(ss, line)) {
-        if (line.find_first_not_of(" \t\n\r") == string::npos) continue;
-        
         for (char c : line) {
             if (c == '{') braceCount++;
             if (c == '}') braceCount--;
         }
         
         currentFlight += line + "\n";
-
-        if (braceCount == 0 && currentFlight.find('{') != string::npos && currentFlight.find('}') != string::npos) {
-            parseFlightObject(currentFlight);
+        
+        if (braceCount == 0 && !currentFlight.empty()) {
+            if (currentFlight.find("flightId") != string::npos) {
+                parseFlightObject(currentFlight, aircraftRepo);
+            }
             currentFlight = "";
         }
     }
 }
 
-void FlightRepository::parseFlightObject(const string& flightJson) {
+void FlightRepository::parseFlightObject(const string& flightJson, AircraftRepository& aircraftRepo) {
     string flightId = extractString(flightJson, "flightId");
     string flightNumber = extractString(flightJson, "flightNumber");
     string departureCity = extractString(flightJson, "departureCity");
@@ -98,43 +81,24 @@ void FlightRepository::parseFlightObject(const string& flightJson) {
     string departureTime = extractString(flightJson, "departureTime");
     string arrivalTime = extractString(flightJson, "arrivalTime");
     string aircraftId = extractString(flightJson, "aircraftId");
-    int totalSeats = extractInt(flightJson, "totalSeats");
     string statusStr = extractString(flightJson, "status");
 
-    if (flightId.empty() || flightNumber.empty()) return;
+    if (flightId.empty() || flightNumber.empty()) {
+        return;
+    }
 
-    FlightStatus status = FlightStatus::Scheduled;
-    if (statusStr == "InFlight") status = FlightStatus::InFlight;
-    else if (statusStr == "Completed") status = FlightStatus::Completed;
-    else if (statusStr == "Cancelled") status = FlightStatus::Cancelled;
-    else if (statusStr == "Delayed") status = FlightStatus::Delayed;
+    auto aircraft = aircraftRepo.findByAircraftId(aircraftId);
+    if (!aircraft) {
+        cerr << "Warning: Aircraft " << aircraftId << " not found for flight " << flightId << "\n";
+        return;
+    }
 
-    auto flight = make_shared<Flight>(flightId, flightNumber, departureCity, 
-                                      arrivalCity, departureTime, arrivalTime, 
-                                      aircraftId, totalSeats, status);
+    FlightStatus status = stringToFlightStatus(statusStr);
+
+    auto flight = make_shared<Flight>(flightId, flightNumber, aircraft, departureCity,
+                                     arrivalCity, departureTime, arrivalTime, status);
+
     flights.push_back(flight);
-}
-
-shared_ptr<Flight> FlightRepository::findByFlightNumber(const string& flightNumber) const {
-    for (const auto& flight : flights) {
-        if (flight->getFlightNumber() == flightNumber) {
-            return flight;
-        }
-    }
-    return nullptr;
-}
-
-shared_ptr<Flight> FlightRepository::findByFlightId(const string& flightId) const {
-    for (const auto& flight : flights) {
-        if (flight->getFlightId() == flightId) {
-            return flight;
-        }
-    }
-    return nullptr;
-}
-
-const vector<shared_ptr<Flight>>& FlightRepository::getAllFlights() const {
-    return flights;
 }
 
 string FlightRepository::flightStatusToString(FlightStatus status) const {
@@ -167,6 +131,8 @@ void FlightRepository::saveToJson() const {
     
     for (size_t i = 0; i < flights.size(); ++i) {
         const auto& flight = flights[i];
+        auto aircraft = flight->getAircraft();
+        
         file << "  {\n";
         file << "    \"flightId\": \"" << flight->getFlightId() << "\",\n";
         file << "    \"flightNumber\": \"" << flight->getFlightNumber() << "\",\n";
@@ -174,8 +140,32 @@ void FlightRepository::saveToJson() const {
         file << "    \"arrivalCity\": \"" << flight->getArrivalCity() << "\",\n";
         file << "    \"departureTime\": \"" << flight->getDepartureTime() << "\",\n";
         file << "    \"arrivalTime\": \"" << flight->getArrivalTime() << "\",\n";
+        file << "    \"aircraftId\": \"" << (aircraft ? aircraft->getAircraftId() : "") << "\",\n";
         file << "    \"status\": \"" << flightStatusToString(flight->getStatus()) << "\",\n";
-        file << "    \"aircraftId\": \"" << flight->getAircraftId() << "\"\n";
+        
+        file << "    \"seats\": [\n";
+        const auto& seats = flight->getSeats();
+        for (size_t j = 0; j < seats.size(); ++j) {
+            const auto& seat = seats[j];
+            
+            string statusStr;
+            switch (seat->getStatus()) {
+                case SeatStatus::Available: statusStr = "Available"; break;
+                case SeatStatus::Reserved: statusStr = "Reserved"; break;
+                case SeatStatus::Occupied: statusStr = "Occupied"; break;
+            }
+            
+            file << "      {\n";
+            file << "        \"seatId\": \"" << seat->getSeatId() << "\",\n";
+            file << "        \"seatNumber\": \"" << seat->getSeatNumber() << "\",\n";
+            file << "        \"seatClass\": \"" << (seat->getSeatClass() == SeatClass::Business ? "Business" : "Economy") << "\",\n";
+            file << "        \"status\": \"" << statusStr << "\"\n";
+            file << "      }";
+            if (j < seats.size() - 1) file << ",";
+            file << "\n";
+        }
+        file << "    ]\n";
+        
         file << "  }";
         if (i < flights.size() - 1) file << ",";
         file << "\n";
@@ -186,29 +176,65 @@ void FlightRepository::saveToJson() const {
 }
 
 void FlightRepository::addFlight(shared_ptr<Flight> flight) {
-    flights.push_back(flight);
-    saveToJson();  // PERSIST CHANGES
+    if (flight && !findByFlightId(flight->getFlightId())) {
+        flights.push_back(flight);
+        saveToJson();
+    }
 }
 
 void FlightRepository::updateFlight(shared_ptr<Flight> flight) {
-    auto it = find_if(flights.begin(), flights.end(),
-        [&flight](const shared_ptr<Flight>& f) {
-            return f->getFlightId() == flight->getFlightId();
-        });
-    
-    if (it != flights.end()) {
-        *it = flight;
-        saveToJson();  // PERSIST CHANGES
+    for (auto& f : flights) {
+        if (f->getFlightId() == flight->getFlightId()) {
+            f = flight;
+            saveToJson();
+            return;
+        }
     }
 }
 
 void FlightRepository::deleteFlight(const string& flightId) {
     flights.erase(
         remove_if(flights.begin(), flights.end(),
-            [&flightId](const shared_ptr<Flight>& f) {
+            [flightId](const shared_ptr<Flight>& f) {
                 return f->getFlightId() == flightId;
             }),
         flights.end()
     );
-    saveToJson();  // PERSIST CHANGES
+    saveToJson();
+}
+
+shared_ptr<Flight> FlightRepository::findByFlightId(const string& flightId) const {
+    for (const auto& flight : flights) {
+        if (flight->getFlightId() == flightId) {
+            return flight;
+        }
+    }
+    return nullptr;
+}
+
+shared_ptr<Flight> FlightRepository::findByFlightNumber(const string& flightNumber) const {
+    for (const auto& flight : flights) {
+        if (flight->getFlightNumber() == flightNumber) {
+            return flight;
+        }
+    }
+    return nullptr;
+}
+
+vector<shared_ptr<Flight>> FlightRepository::searchFlights(const string& origin, const string& destination, const string& date) const {
+    vector<shared_ptr<Flight>> result;
+    
+    for (const auto& flight : flights) {
+        if (flight->getDepartureCity() == origin && 
+            flight->getArrivalCity() == destination &&
+            flight->getDepartureTime().find(date) == 0) {
+            result.push_back(flight);
+        }
+    }
+    
+    return result;
+}
+
+const vector<shared_ptr<Flight>>& FlightRepository::getAllFlights() const {
+    return flights;
 }

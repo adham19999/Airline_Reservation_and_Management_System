@@ -67,6 +67,18 @@
     <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\UserRepository.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\FlightRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\AircraftRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\CrewRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\ReservationRepository.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\ApplicationUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -97,13 +109,7 @@
     <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\passenger\SearchFlightsUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\FlightRepository.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\AircraftRepository.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\repository\CrewRepository.cpp">
+    <ClCompile Include="D:\programing lang\c++ codes\Assignments and Exersice\Final\ARS\AirlineSystem\src\ui\passenger\BookFlightUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -22,4 +22,12 @@ string Aircraft::getManufacturer() const { return manufacturer; }
 int Aircraft::getEconomySeats() const { return economySeats; }
 int Aircraft::getBusinessSeats() const { return businessSeats; }
 int Aircraft::getTotalSeats() const { return totalSeats; }
-const vector<Seat>& Aircraft::getSeats() const { return seats; }
+
+// ✅ ADD ALIAS METHODS
+int Aircraft::getBusinessClassCapacity() const {
+    return businessSeats;
+}
+
+int Aircraft::getEconomyClassCapacity() const {
+    return economySeats;
+}

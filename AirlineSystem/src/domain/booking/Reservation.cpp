@@ -1,41 +1,65 @@
 #include "Reservation.h"
+#include <ctime>
+#include <sstream>
+#include <iomanip>
 
 Reservation::Reservation(const string& reservationId,
                          shared_ptr<Flight> flight,
                          shared_ptr<Passenger> passenger,
-                         const string& seatNumber,
-                         shared_ptr<Payment> payment)
+                         shared_ptr<Seat> seat,
+                         shared_ptr<Payment> payment,
+                         const string& bookingDate)
     : reservationId(reservationId),
       flight(flight),
       passenger(passenger),
-      seatNumber(seatNumber),
-      status(ReservationStatus::Confirmed),
-      payment(payment) {}
+      seat(seat),
+      payment(payment),
+      bookingDate(bookingDate),
+      status(ReservationStatus::Confirmed) {}
 
-string Reservation::getReservationId() const {
-    return reservationId;
-}
+// Getters
+string Reservation::getReservationId() const { return reservationId; }
+shared_ptr<Flight> Reservation::getFlight() const { return flight; }
+shared_ptr<Passenger> Reservation::getPassenger() const { return passenger; }
+shared_ptr<Seat> Reservation::getSeat() const { return seat; }
+shared_ptr<Payment> Reservation::getPayment() const { return payment; }
+string Reservation::getBookingDate() const { return bookingDate; }
+ReservationStatus Reservation::getStatus() const { return status; }
 
-shared_ptr<Flight> Reservation::getFlight() const {
-    return flight;
-}
-
-shared_ptr<Passenger> Reservation::getPassenger() const {
-    return passenger;
-}
-
+// Convenience getter - extracts seat number from seat object
 string Reservation::getSeatNumber() const {
-    return seatNumber;
+    if (seat) {
+        return seat->getSeatNumber();
+    }
+    return "N/A";
 }
 
-ReservationStatus Reservation::getStatus() const {
-    return status;
+// Setters
+void Reservation::setStatus(ReservationStatus newStatus) {
+    status = newStatus;
 }
 
-void Reservation::setStatus(ReservationStatus status) {
-    this->status = status;
+// Sets the seat OBJECT (not string)
+void Reservation::setSeat(shared_ptr<Seat> newSeat) {
+    seat = newSeat;
 }
 
-shared_ptr<Payment> Reservation::getPayment() const {
-    return payment;
+// State management
+void Reservation::cancel() {
+    status = ReservationStatus::Cancelled;
+    if (seat) {
+        seat->release();
+    }
+    if (payment) {
+        payment->refund();
+    }
+}
+
+void Reservation::checkIn() {
+    if (status == ReservationStatus::Confirmed) {
+        status = ReservationStatus::CheckedIn;
+        if (seat) {
+            seat->occupy();
+        }
+    }
 }

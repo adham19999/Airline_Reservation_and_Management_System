@@ -1,62 +1,93 @@
 #include "FlightService.h"
-#include "../../domain/flight/Seat.h"
-#include <algorithm>
 #include <stdexcept>
+#include <algorithm>
+#include <iostream>
 
 using namespace std;
 
-FlightService::FlightService(FlightRepository& fRepo, AircraftRepository& aRepo)
-    : flightRepo(fRepo), aircraftRepo(aRepo) {}
+FlightService::FlightService(FlightRepository& repo, AircraftRepository& aircraftRepo)
+    : flightRepo(repo), aircraftRepo(aircraftRepo) {}
 
-shared_ptr<Flight> FlightService::createFlight(const string& flightNumber, const string& departure,
-                                               const string& arrival, const string& depTime,
-                                               const string& arrTime, const string& aircraftId) {
-    // Validate aircraft exists
+void FlightService::addFlight(const string& flightId,
+                              const string& flightNumber,
+                              const string& departureCity,
+                              const string& arrivalCity,
+                              const string& departureTime,
+                              const string& arrivalTime,
+                              const string& aircraftId,
+                              FlightStatus status) {
+    
     auto aircraft = aircraftRepo.findByAircraftId(aircraftId);
     if (!aircraft) {
         throw runtime_error("Aircraft not found: " + aircraftId);
     }
 
-    // Generate new flight ID
-    const auto& allFlights = flightRepo.getAllFlights();
-    string flightId = "F" + to_string(allFlights.size() + 1);
-
-    // Create new flight with 9 parameters (including totalSeats from aircraft)
     auto flight = make_shared<Flight>(
-        flightId,                          // param 1
-        flightNumber,                      // param 2
-        departure,                         // param 3
-        arrival,                           // param 4
-        depTime,                           // param 5
-        arrTime,                           // param 6
-        aircraftId,                        // param 7
-        aircraft->getTotalSeats(),         // param 8 - NEW: totalSeats
-        FlightStatus::Scheduled            // param 9
+        flightId,
+        flightNumber,
+        aircraft,
+        departureCity,
+        arrivalCity,
+        departureTime,
+        arrivalTime,
+        status
     );
 
+    // ✅ Generate seats for new flight
+    if (flight->getSeats().empty()) {
+        generateSeatsForFlight(flight, aircraft);
+    }
+
     flightRepo.addFlight(flight);
+}
+
+void FlightService::updateFlight(const string& flightId,
+                                 const string& flightNumber,
+                                 const string& departureCity,
+                                 const string& arrivalCity,
+                                 const string& departureTime,
+                                 const string& arrivalTime,
+                                 const string& aircraftId,
+                                 FlightStatus status) {
     
-    // Generate seats for the flight
-    generateSeatsForFlight(flight->getFlightId());
-
-    return flight;
-}
-
-shared_ptr<Flight> FlightService::getFlightByNumber(const string& flightNumber) const {
-    return flightRepo.findByFlightNumber(flightNumber);
-}
-
-const vector<shared_ptr<Flight>>& FlightService::getAllFlights() const {
-    return flightRepo.getAllFlights();
-}
-
-void FlightService::updateFlightStatus(const string& flightId, FlightStatus status) {
     auto flight = flightRepo.findByFlightId(flightId);
     if (!flight) {
         throw runtime_error("Flight not found: " + flightId);
     }
 
-    flight->setStatus(status);
+    auto aircraft = aircraftRepo.findByAircraftId(aircraftId);
+    if (!aircraft) {
+        throw runtime_error("Aircraft not found: " + aircraftId);
+    }
+
+    auto updatedFlight = make_shared<Flight>(
+        flightId,
+        flightNumber,
+        aircraft,
+        departureCity,
+        arrivalCity,
+        departureTime,
+        arrivalTime,
+        status
+    );
+
+    // ✅ Preserve seats if same aircraft, regenerate if changed
+    if (aircraft->getAircraftId() == flight->getAircraft()->getAircraftId()) {
+        updatedFlight->setSeats(flight->getSeats());
+    } else {
+        generateSeatsForFlight(updatedFlight, aircraft);
+    }
+
+    flightRepo.updateFlight(updatedFlight);
+}
+
+void FlightService::updateFlightStatus(const string& flightId, FlightStatus newStatus) {
+    auto flight = flightRepo.findByFlightId(flightId);
+    if (!flight) {
+        throw runtime_error("Flight not found: " + flightId);
+    }
+
+    flight->setStatus(newStatus);
     flightRepo.updateFlight(flight);
 }
 
@@ -64,67 +95,88 @@ void FlightService::deleteFlight(const string& flightId) {
     flightRepo.deleteFlight(flightId);
 }
 
-void FlightService::generateSeatsForFlight(const string& flightId) {
-    auto flight = flightRepo.findByFlightId(flightId);
-    if (!flight) {
-        throw runtime_error("Flight not found: " + flightId);
-    }
-
-    auto aircraft = aircraftRepo.findByAircraftId(flight->getAircraftId());
-    if (!aircraft) {
-        throw runtime_error("Aircraft not found for flight: " + flightId);
-    }
-
-    // Generate business class seats
-    int seatNumber = 1;
-    for (int i = 0; i < aircraft->getBusinessSeats(); i++) {
-        string seatId = "SEAT" + flightId + "_" + to_string(seatNumber);
-        auto seat = make_shared<Seat>(
-            seatId,
-            to_string(seatNumber),
-            SeatClass::Business,
-            SeatStatus::Available,
-            flightId
-        );
-        flight->addSeat(seat);
-        seatNumber++;
-    }
-
-    // Generate economy class seats
-    for (int i = 0; i < aircraft->getEconomySeats(); i++) {
-        string seatId = "SEAT" + flightId + "_" + to_string(seatNumber);
-        auto seat = make_shared<Seat>(
-            seatId,
-            to_string(seatNumber),
-            SeatClass::Economy,
-            SeatStatus::Available,
-            flightId
-        );
-        flight->addSeat(seat);
-        seatNumber++;
-    }
-
-    flightRepo.updateFlight(flight);
+shared_ptr<Flight> FlightService::getFlightById(const string& flightId) const {
+    return flightRepo.findByFlightId(flightId);
 }
 
-vector<shared_ptr<Flight>> FlightService::searchFlights(const string& origin, 
-                                                        const string& destination, 
-                                                        const string& departureDate) {
-    vector<shared_ptr<Flight>> results;
-    const auto& allFlights = flightRepo.getAllFlights();
+shared_ptr<Flight> FlightService::getFlightByNumber(const string& flightNumber) const {
+    return flightRepo.findByFlightNumber(flightNumber);
+}
 
-    for (const auto& flight : allFlights) {
-        // Partial matching for origin and destination
-        bool matchesOrigin = flight->getDepartureCity().find(origin) != string::npos;
-        bool matchesDestination = flight->getArrivalCity().find(destination) != string::npos;
-        bool matchesDate = flight->getDepartureTime().find(departureDate) != string::npos;
+vector<shared_ptr<Flight>> FlightService::searchFlights(const string& origin,
+                                                        const string& destination,
+                                                        const string& date) const {
+    return flightRepo.searchFlights(origin, destination, date);
+}
 
-        // Only return scheduled flights that match all criteria
-        if (matchesOrigin && matchesDestination && matchesDate && 
-            flight->getStatus() == FlightStatus::Scheduled) {
-            results.push_back(flight);
+vector<shared_ptr<Flight>> FlightService::getAllFlights() const {
+    return flightRepo.getAllFlights();
+}
+
+void FlightService::ensureAllFlightsHaveSeats() {
+    auto allFlights = flightRepo.getAllFlights();
+    
+    for (auto& flight : allFlights) {
+        if (flight->getSeats().empty()) {
+            auto aircraft = flight->getAircraft();
+            if (aircraft) {
+                cout << "  → Generating seats for flight " << flight->getFlightNumber() << "...\n";
+                generateSeatsForFlight(flight, aircraft);
+                flightRepo.updateFlight(flight);
+            }
         }
     }
+}
 
-    return results;
+// ✅ ADD THIS MISSING IMPLEMENTATION
+void FlightService::generateSeatsForFlight(shared_ptr<Flight> flight, shared_ptr<Aircraft> aircraft) {
+    vector<shared_ptr<Seat>> seats;
+    
+    int businessSeats = aircraft->getBusinessSeats();
+    int economySeats = aircraft->getEconomySeats();
+    
+    // Generate Business Class seats (rows 1-5, columns A-F)
+    int seatCounter = 1;
+    for (int row = 1; row <= (businessSeats / 6) && seatCounter <= businessSeats; ++row) {
+        for (char col = 'A'; col <= 'F' && seatCounter <= businessSeats; ++col) {
+            string seatNumber = to_string(row) + col;
+            string seatId = "SEAT_" + flight->getFlightId() + "_" + seatNumber;
+            
+            auto seat = make_shared<Seat>(
+                seatId, 
+                seatNumber, 
+                SeatClass::Business, 
+                SeatStatus::Available,
+                flight->getFlightId()
+            );
+            seats.push_back(seat);
+            seatCounter++;
+        }
+    }
+    
+    // Generate Economy Class seats (rows 10+, columns A-F)
+    seatCounter = 1;
+    int startRow = 10;
+    for (int row = startRow; seatCounter <= economySeats; ++row) {
+        for (char col = 'A'; col <= 'F' && seatCounter <= economySeats; ++col) {
+            string seatNumber = to_string(row) + col;
+            string seatId = "SEAT_" + flight->getFlightId() + "_" + seatNumber;
+            
+            auto seat = make_shared<Seat>(
+                seatId, 
+                seatNumber, 
+                SeatClass::Economy, 
+                SeatStatus::Available,
+                flight->getFlightId()
+            );
+            seats.push_back(seat);
+            seatCounter++;
+        }
+    }
+    
+    flight->setSeats(seats);
+    
+    cout << "✓ Generated " << seats.size() << " seats (" 
+         << businessSeats << " Business, " 
+         << economySeats << " Economy)\n";
 }

@@ -5,6 +5,7 @@
 #include <vector>
 #include <memory>
 #include "Seat.h"
+#include "Aircraft.h"
 using namespace std;
 
 enum class FlightStatus {
@@ -12,7 +13,7 @@ enum class FlightStatus {
     InFlight,
     Completed,
     Cancelled,
-        Delayed 
+    Delayed 
 };
 
 class Flight {
@@ -23,20 +24,18 @@ private:
     string arrivalCity;
     string departureTime;
     string arrivalTime;
-    string aircraftId;
-    int totalSeats;
+    shared_ptr<Aircraft> aircraft;
     FlightStatus status;
     vector<shared_ptr<Seat>> seats;
 
 public:
     Flight(const string& flightId,
            const string& flightNumber,
+           shared_ptr<Aircraft> aircraft,
            const string& departureCity,
            const string& arrivalCity,
            const string& departureTime,
            const string& arrivalTime,
-           const string& aircraftId,
-           int totalSeats,
            FlightStatus status);
 
     // Getters
@@ -46,13 +45,14 @@ public:
     string getArrivalCity() const;
     string getDepartureTime() const;
     string getArrivalTime() const;
-    string getAircraftId() const;
-    int getTotalSeats() const;
+    shared_ptr<Aircraft> getAircraft() const;
+    string getAircraftId() const;  // ✅ ADD THIS - Convenience method
     FlightStatus getStatus() const;
     const vector<shared_ptr<Seat>>& getSeats() const;
 
-    // Mutators
-    void setStatus(FlightStatus s);
+    // Setters
+    void setStatus(FlightStatus status);
+    void setSeats(const vector<shared_ptr<Seat>>& newSeats);
     void addSeat(shared_ptr<Seat> seat);
 };
 

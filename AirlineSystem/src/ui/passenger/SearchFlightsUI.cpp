@@ -28,32 +28,28 @@ void SearchFlightsUI::display() {
 
 void SearchFlightsUI::displayFlightResults(const vector<shared_ptr<Flight>>& flights) const {
     if (flights.empty()) {
-        cout << "\nNo available flights found.\n";
+        cout << "\nNo flights found matching your criteria.\n";
         return;
     }
 
-    cout << "\nAvailable Flights:\n";
+    cout << "\n========================================\n";
+    cout << "Search Results:\n";
+    cout << "========================================\n";
+    cout << left << setw(12) << "Flight#" << setw(15) << "Route" 
+         << setw(20) << "Departure" << setw(20) << "Arrival" 
+         << setw(15) << "Aircraft" << "\n";
+    cout << "----------------------------------------\n";
 
-    for (size_t i = 0; i < flights.size(); ++i) {
-        const auto& flight = flights[i];
-        
-        // Get aircraft details
-        auto aircraft = aircraftService.getAircraftById(flight->getAircraftId());
-        string aircraftModel = aircraft ? aircraft->getModel() : "Unknown";
-        
-        // Calculate available seats (total seats - for now showing total, 
-        // will be updated when reservation system is implemented)
-        int availableSeats = aircraft ? aircraft->getTotalSeats() : 0;
-        
-        // Placeholder price (will be from pricing system later)
-        double price = 250.00 + (i * 50.00);
+    for (const auto& flight : flights) {
+        // ✅ NOW WORKS: getAircraft() returns shared_ptr<Aircraft>
+        auto aircraft = flight->getAircraft();
+        string aircraftModel = aircraft ? aircraft->getModel() : "N/A";
 
-        cout << (i + 1) << ". Flight Number: " << flight->getFlightNumber() << "\n";
-        cout << "   Departure: " << flight->getDepartureTime() << "\n";
-        cout << "   Arrival: " << flight->getArrivalTime() << "\n";
-        cout << "   Aircraft: " << aircraftModel << "\n";
-        cout << "   Available Seats: " << availableSeats << "\n";
-        cout << "   Price: $" << fixed << setprecision(2) << price << "\n";
+        cout << left << setw(12) << flight->getFlightNumber()
+             << setw(15) << (flight->getDepartureCity() + "-" + flight->getArrivalCity())
+             << setw(20) << flight->getDepartureTime()
+             << setw(20) << flight->getArrivalTime()
+             << setw(15) << aircraftModel << "\n";
     }
 
     cout << "\n";

@@ -4,7 +4,6 @@ project(AirlineSystem)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Source files
 set(SOURCES
     src/main.cpp
     
@@ -44,12 +43,16 @@ set(SOURCES
     
     # Repository
     src/repository/UserRepository.cpp
+    src/repository/FlightRepository.cpp
+    src/repository/AircraftRepository.cpp
+    src/repository/CrewRepository.cpp
+    src/repository/ReservationRepository.cpp
     
     # UI - Base
     src/ui/ApplicationUI.cpp
     src/ui/LoginUI.cpp
     
-  # UI - Admin
+    # UI - Admin
     src/ui/admin/AdminMenu.cpp
     src/ui/admin/ManageFlightsUI.cpp
     src/ui/admin/ManageAircraftUI.cpp
@@ -58,27 +61,17 @@ set(SOURCES
     
     # UI - Agent
     src/ui/agent/AgentMenu.cpp
-
     
     # UI - Passenger
     src/ui/passenger/PassengerMenu.cpp
     src/ui/passenger/SearchFlightsUI.cpp
-    # Repository
-    src/repository/UserRepository.cpp
-    src/repository/FlightRepository.cpp
-    src/repository/AircraftRepository.cpp
-    src/repository/CrewRepository.cpp
-    
+    src/ui/passenger/BookFlightUI.cpp
 )
 
-# Include directories
 include_directories(${CMAKE_SOURCE_DIR}/src)
 
-
-# Create executable
 add_executable(AirlineSystem ${SOURCES})
 
-# Output directory
 set_target_properties(AirlineSystem PROPERTIES
     RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin"
 )

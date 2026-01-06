@@ -2,39 +2,35 @@
 #define PAYMENT_H
 
 #include <string>
+#include <memory>
+#include "PaymentStrategy.h"
 using namespace std;
-
-enum class PaymentMethod {
-    CreditCard,
-    Cash,
-    PayPal
-};
 
 enum class PaymentStatus {
     Pending,
     Completed,
-    Refunded,
-    Failed
+    Failed,
+    Refunded
 };
 
 class Payment {
 private:
     string paymentId;
-    PaymentMethod method;
     double amount;
     PaymentStatus status;
+    shared_ptr<PaymentStrategy> strategy;
 
 public:
-    Payment(const string& paymentId,
-            PaymentMethod method,
-            double amount);
+    Payment(const string& paymentId, double amount, shared_ptr<PaymentStrategy> strategy);
 
     string getPaymentId() const;
-    PaymentMethod getMethod() const;
     double getAmount() const;
     PaymentStatus getStatus() const;
+    string getPaymentMethodName() const;
 
-    void setStatus(PaymentStatus status);
+    bool process();
+    bool refund();
+    void setStatus(PaymentStatus newStatus);
 };
 
 #endif

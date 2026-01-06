@@ -1,4 +1,3 @@
-// ...existing includes...
 #include "ApplicationUI.h"
 #include "LoginUI.h"
 #include "admin/AdminMenu.h"
@@ -13,9 +12,16 @@ ApplicationUI::ApplicationUI(UserRepository& repo,
                              AuthService& authSvc,
                              FlightService& flightSvc,
                              AircraftService& aircraftSvc,
-                             CrewService& crewSvc)
-    : userRepository(repo), authService(authSvc),
-      flightService(flightSvc), aircraftService(aircraftSvc), crewService(crewSvc) {}
+                             CrewService& crewSvc,
+                             BookingService& bookingSvc,
+                             SeatService& seatSvc)  // ✅ ADD PARAMETER
+    : userRepository(repo), 
+      authService(authSvc),
+      flightService(flightSvc), 
+      aircraftService(aircraftSvc), 
+      crewService(crewSvc),
+      bookingService(bookingSvc),
+      seatService(seatSvc) {}  // ✅ INITIALIZE
 
 void ApplicationUI::displayRoleSelectionMenu() const {
     cout << "\n========================================\n";
@@ -40,16 +46,16 @@ unique_ptr<Menu> ApplicationUI::createMenuForRole(shared_ptr<User> user) {
     UserRole role = user->getRole();
 
     if (role == UserRole::Administrator) {
-        return make_unique<AdminMenu>(user, flightService, aircraftService, crewService, userRepository);  // Added userRepository
+        return make_unique<AdminMenu>(user, flightService, aircraftService, crewService, userRepository);
     } else if (role == UserRole::BookingAgent) {
         return make_unique<AgentMenu>(user);
     } else if (role == UserRole::Passenger) {
-        return make_unique<PassengerMenu>(user, flightService, aircraftService);
+        // ✅ NOW PASSES BookingService AND SeatService
+        return make_unique<PassengerMenu>(user, flightService, aircraftService, bookingService, seatService);
     }
 
     return nullptr;
 }
-
 
 void ApplicationUI::run() {
     bool systemRunning = true;
